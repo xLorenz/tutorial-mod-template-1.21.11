@@ -1,3 +1,11 @@
 // 1.21.11	-999999999-01-01T00:00:00	tutorial mod/Model Definitions
+b28ab3b9b2c00fb4b7f61f5fbc1ca5274ced9e3c assets/tutorial_mod/blockstates/pink_garnet_block.json
+233efcabf48ea15ea77728767985a02042674be5 assets/tutorial_mod/blockstates/raw_pink_garnet_block.json
 9ea68ab4ca3f4915c4dc60dda37a6754a0604c8e assets/tutorial_mod/items/adamantite_ingot.json
+90dc6d0de32446f3c8b63d4d5d8b440011a0a536 assets/tutorial_mod/items/pink_garnet.json
+c7c779e8681ff762be7dbccc1a12d59ad32336c0 assets/tutorial_mod/items/raw_pink_garnet.json
+e57b31228ce74020105ad4448ec82d5ccd63d91a assets/tutorial_mod/models/block/pink_garnet_block.json
+17962a571b914cb9bf9848d0b213cc7d90a67042 assets/tutorial_mod/models/block/raw_pink_garnet_block.json
 67c4997344dce990b155fb3f1787b9df01830d25 assets/tutorial_mod/models/item/adamantite_ingot.json
+3eda4fdba325801db07a5c431e2555b44743dfb8 assets/tutorial_mod/models/item/pink_garnet.json
+c39d3a8b1c323f4bd89b339b3786491a3df8c1c9 assets/tutorial_mod/models/item/raw_pink_garnet.json

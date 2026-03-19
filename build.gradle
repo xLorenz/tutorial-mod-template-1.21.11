@@ -18,6 +18,15 @@ repositories {
 	// for more information about repositories.
 }
 
+def generatedResources = file('src/main/generated')
+
+sourceSets {
+	main {
+		resources {
+			srcDirs += generatedResources
+		}
+	}
+}
 fabricApi {
 	configureDataGeneration {
 		client = true
