@@ -5,7 +5,7 @@
     "bonus_rolls": 0.0,
     "entries": [{
       "type": "minecraft:item",
-      "name": "tutorial_mod:pink_garnet_block"
+      "name": "tutorial_mod:raw_pink_garnet_block"
     }],
     "conditions": [{
       "condition": "minecraft:survives_explosion"

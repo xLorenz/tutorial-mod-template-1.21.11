@@ -3,5 +3,12 @@
   "item.tutorial_mod.adamantite_ingot": "Adamantite Ingot",
 
   "block.tutorial_mod.pink_garnet_block": "Pink Garnet Block",
-  "block.tutorial_mod.raw_pink_garnet_block": "Raw Pink Garnet Block"
+  "block.tutorial_mod.raw_pink_garnet_block": "Raw Pink Garnet Block",
+
+  "block.tutorial_mod.pink_garnet_ore": "Pink Garnet Ore",
+  "block.tutorial_mod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
+
+  "itemgroup.tutorial_mod.garnet_ores_group": "Garnet Ores",
+  "itemgroup.tutorial_mod.garnet_blocks_group": "Garnet Blocks"
+
 }

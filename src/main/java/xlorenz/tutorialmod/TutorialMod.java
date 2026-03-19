@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xlorenz.tutorialmod.block.ModBlocks;
+import xlorenz.tutorialmod.items.ModItemGroups;
 import xlorenz.tutorialmod.items.ModItems;
 
 public class TutorialMod implements ModInitializer {
@@ -16,5 +17,6 @@ public class TutorialMod implements ModInitializer {
 	public void onInitialize() {
 		ModItems.initialize();
 		ModBlocks.initialize();
+		ModItemGroups.initialize();
 	}
 }

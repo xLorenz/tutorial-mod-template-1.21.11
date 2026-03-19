@@ -3,6 +3,7 @@ package xlorenz.tutorialmod.block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -12,7 +13,9 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import xlorenz.tutorialmod.TutorialMod;
+
 
 public class ModBlocks {
 
@@ -29,10 +32,35 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
     );
 
+    public static final Block PINK_GARNET_ORE = registerExperienceDroppingBlock("pink_garnet_ore", UniformIntProvider.create(2,5),
+            AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.STONE)
+    );
+    public static final Block PINK_GARNET_DEEPSLATE_ORE = registerExperienceDroppingBlock("pink_garnet_deepslate_ore", UniformIntProvider.create(2,5),
+                    AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.DEEPSLATE)
+    );
+
+
 
     private static Block registerBlock(String name, AbstractBlock.Settings settings) {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
         Block block = new Block(settings.registryKey(key));
+
+        registerBlockItem(name, block);
+
+        return Registry.register(Registries.BLOCK, key, block);
+
+    }
+
+    private static Block registerExperienceDroppingBlock(String name, UniformIntProvider values, AbstractBlock.Settings settings) {
+        RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
+
+        ExperienceDroppingBlock block = new ExperienceDroppingBlock(values, settings.registryKey(key));
 
         registerBlockItem(name, block);
 

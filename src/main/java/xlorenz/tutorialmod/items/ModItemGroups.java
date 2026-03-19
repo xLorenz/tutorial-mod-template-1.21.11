@@ -1,4 +1,64 @@
 package xlorenz.tutorialmod.items;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.resource.v1.reloader.ResourceReloaderKeys;
+import net.fabricmc.fabric.mixin.itemgroup.CreativeModeTabAccessor;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.*;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import xlorenz.tutorialmod.TutorialMod;
+import xlorenz.tutorialmod.block.ModBlocks;
+
+import java.util.function.Function;
+
 public class ModItemGroups {
+
+    public static  final  ItemGroup GARNET_ORES_TAB = register("garnet_ores_group", ModItems.PINK_GARNET, ((displayContext, entries) -> {
+        entries.add(ModItems.RAW_PINK_GARNET);
+        entries.add(ModItems.PINK_GARNET);
+        entries.add(ModItems.ADAMANTITE_INGOT);
+    }));
+
+    public static  final  ItemGroup GARNET_BLOCK_TAB = register("garnet_blocks_group", ModBlocks.PINK_GARNET_BLOCK, ((displayContext, entries) -> {
+        entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
+        entries.add(ModBlocks.PINK_GARNET_BLOCK);
+        entries.add(ModBlocks.PINK_GARNET_ORE);
+        entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+    }));
+
+
+    public static ItemGroup register(String name, net.minecraft.item.ItemConvertible icon, ItemGroup.EntryCollector entries) {
+        RegistryKey<ItemGroup> groupKey = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(TutorialMod.MOD_ID, name));
+
+        ItemGroup group = FabricItemGroup.builder()
+                .displayName(Text.translatable("itemgroup.tutorial_mod." + name))
+                .icon(() -> new ItemStack(icon))
+                .entries(entries)
+                .build();
+
+        Registry.register(Registries.ITEM_GROUP, groupKey, group);
+
+        return  group;
+    }
+    public static ItemGroup register(String name, Item icon) {
+        RegistryKey<ItemGroup> groupKey = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(TutorialMod.MOD_ID, name));
+
+        ItemGroup group = FabricItemGroup.builder()
+                .displayName(Text.translatable(name))
+                .icon(() -> new ItemStack(icon))
+                .build();
+
+        Registry.register(Registries.ITEM_GROUP, groupKey, group);
+
+        return  group;
+    }
+
+
+    public static void initialize() {
+        TutorialMod.LOGGER.info("Registering item groups for " + TutorialMod.MOD_ID);
+    }
 }
