@@ -30,6 +30,11 @@ public class ModItemGroups {
         entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
     }));
 
+    public static  final ItemGroup GARNET_TOOLS_TAB = register("garnet_tools_group", ModItems.CHISEL, (((displayContext, entries) -> {
+        entries.add(ModItems.CHISEL);
+        entries.add(ModItems.BOOST_STAFF);
+    })));
+
 
     public static ItemGroup register(String name, net.minecraft.item.ItemConvertible icon, ItemGroup.EntryCollector entries) {
         RegistryKey<ItemGroup> groupKey = RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(TutorialMod.MOD_ID, name));
