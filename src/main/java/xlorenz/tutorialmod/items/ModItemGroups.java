@@ -28,6 +28,7 @@ public class ModItemGroups {
         entries.add(ModBlocks.PINK_GARNET_BLOCK);
         entries.add(ModBlocks.PINK_GARNET_ORE);
         entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+        entries.add(ModBlocks.MAGIC_BLOCK);
     }));
 
     public static  final ItemGroup GARNET_TOOLS_TAB = register("garnet_tools_group", ModItems.CHISEL, (((displayContext, entries) -> {

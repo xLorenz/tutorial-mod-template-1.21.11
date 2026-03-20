@@ -15,6 +15,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import xlorenz.tutorialmod.TutorialMod;
+import xlorenz.tutorialmod.block.custom.MagicBlock;
+
+import java.util.function.Function;
 
 
 public class ModBlocks {
@@ -45,6 +48,11 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.DEEPSLATE)
     );
 
+    public  static  final Block MAGIC_BLOCK = register("magic_block", MagicBlock::new, AbstractBlock.Settings.create()
+            .strength(1f)
+            .requiresTool()
+    );
+
 
 
     private static Block registerBlock(String name, AbstractBlock.Settings settings) {
@@ -65,6 +73,17 @@ public class ModBlocks {
         registerBlockItem(name, block);
 
         return Registry.register(Registries.BLOCK, key, block);
+    }
+
+    public static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings) {
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
+
+        Block block = blockFactory.apply(settings.registryKey(blockKey));
+
+        Registry.register(Registries.BLOCK, blockKey, block);
+        registerBlockItem(name, block);
+
+        return  block;
     }
 
 
