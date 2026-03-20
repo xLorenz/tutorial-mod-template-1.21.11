@@ -24,6 +24,13 @@ public  class ModItems {
     public static final Item BOOST_STAFF = register("boost_staff", BoostStaffItem::new,
             new Item.Settings().maxDamage(16));
 
+    public static final Item CAULIFLOWER = register("cauliflower", Item::new,
+            new Item.Settings().food(ModFoodComponents.CAULIFLOWER, ModFoodComponents.CAULIFLOWER_EFFECTS));
+
+    public static  final Item STAR_LIGHT_ASHES = register("star_light_ashes", Item::new, new Item.Settings());
+
+
+
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TutorialMod.MOD_ID, name));
 

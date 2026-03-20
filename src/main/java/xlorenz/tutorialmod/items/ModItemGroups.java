@@ -1,11 +1,8 @@
 package xlorenz.tutorialmod.items;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.resource.v1.reloader.ResourceReloaderKeys;
-import net.fabricmc.fabric.mixin.itemgroup.CreativeModeTabAccessor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.*;
 import net.minecraft.text.Text;
@@ -13,7 +10,6 @@ import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.ModBlocks;
 
-import java.util.function.Function;
 
 public class ModItemGroups {
 
@@ -21,6 +17,8 @@ public class ModItemGroups {
         entries.add(ModItems.RAW_PINK_GARNET);
         entries.add(ModItems.PINK_GARNET);
         entries.add(ModItems.ADAMANTITE_INGOT);
+        entries.add(ModItems.CAULIFLOWER);
+        entries.add(ModItems.STAR_LIGHT_ASHES);
     }));
 
     public static  final  ItemGroup GARNET_BLOCK_TAB = register("garnet_blocks_group", ModBlocks.PINK_GARNET_BLOCK, ((displayContext, entries) -> {

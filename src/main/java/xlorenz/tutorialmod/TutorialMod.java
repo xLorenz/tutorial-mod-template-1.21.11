@@ -2,6 +2,7 @@ package xlorenz.tutorialmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xlorenz.tutorialmod.block.ModBlocks;
@@ -18,5 +19,10 @@ public class TutorialMod implements ModInitializer {
 		ModItems.initialize();
 		ModBlocks.initialize();
 		ModItemGroups.initialize();
+
+		FuelRegistryEvents.BUILD.register((builder, context) -> {
+			builder.add(ModItems.STAR_LIGHT_ASHES, 30 * 20);
+		});
+
 	}
 }
