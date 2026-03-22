@@ -6,12 +6,21 @@
   "item.tutorial_mod.cauliflower": "Cauliflower",
   "item.tutorial_mod.star_light_ashes": "Star Light Ashes",
 
+  "item.tutorial_mod.pink_garnet.tooltip0": "Hola :)",
+  "item.tutorial_mod.pink_garnet.tooltip1": "§1COMO ESTAS O-O",
+  "item.tutorial_mod.star_light_ashes.tooltip": "Press shift please",
+  "item.tutorial_mod.star_light_ashes.tooltip.shift": "IT WORKS!",
+
   "block.tutorial_mod.pink_garnet_block": "Pink Garnet Block",
+  "block.tutorial_mod.pink_garnet_block.tooltip.shift": "A block made out of pink garnet ;p",
+  "block.tutorial_mod.pink_garnet_block.tooltip": "",
+
   "block.tutorial_mod.raw_pink_garnet_block": "Raw Pink Garnet Block",
 
   "block.tutorial_mod.pink_garnet_ore": "Pink Garnet Ore",
   "block.tutorial_mod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
   "block.tutorial_mod.magic_block": "Magic Block",
+  "block.tutorial_mod.magic_block.tooltip0": "§7§lWow so magic! :o",
 
   "itemgroup.tutorial_mod.garnet_ores_group": "Garnet Ores",
   "itemgroup.tutorial_mod.garnet_blocks_group": "Garnet Blocks",

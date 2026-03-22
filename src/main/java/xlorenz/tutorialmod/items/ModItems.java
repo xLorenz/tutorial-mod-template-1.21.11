@@ -1,5 +1,8 @@
 package xlorenz.tutorialmod.items;
 
+import net.minecraft.client.gui.tooltip.TooltipComponent;
+import net.minecraft.component.ComponentType;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
