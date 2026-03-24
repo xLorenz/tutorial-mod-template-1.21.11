@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "tutorial_mod:pink_garnet_block",
+    "G": "tutorial_mod:pink_garnet",
+    "S": "tutorial_mod:star_light_ashes"
+  },
+  "pattern": [
+    "SGS",
+    "GBG",
+    "SGS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tutorial_mod:magic_block"
+  }
+}
