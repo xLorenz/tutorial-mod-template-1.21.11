@@ -2,11 +2,12 @@ package xlorenz.tutorialmod.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.client.data.BlockStateModelGenerator;
-import net.minecraft.client.data.ItemModelGenerator;
-import net.minecraft.client.data.Models;
+import net.minecraft.client.data.*;
+import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.items.ModItems;
+
+import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -20,6 +21,11 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_GARNET_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK);
+
+        blockStateModelGenerator.registerItemModel(ModBlocks.MAGIC_BLOCK, "block");
+        blockStateModelGenerator.registerItemModel(ModBlocks.MAGIC_BLOCK);
+
+
     }
 
     @Override
@@ -31,5 +37,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BOOST_STAFF, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAULIFLOWER, Models.GENERATED);
         itemModelGenerator.register(ModItems.STAR_LIGHT_ASHES, Models.GENERATED);
+
+
+
+
     }
 }
