@@ -24,6 +24,16 @@
 
   "itemgroup.tutorial_mod.garnet_ores_group": "Garnet Ores",
   "itemgroup.tutorial_mod.garnet_blocks_group": "Garnet Blocks",
-  "itemgroup.tutorial_mod.garnet_tools_group": "Garnet Tools"
+  "itemgroup.tutorial_mod.garnet_tools_group": "Garnet Tools",
+
+  "block.tutorial_mod.pink_garnet_stairs": "Pink Garnet Stairs",
+  "block.tutorial_mod.pink_garnet_slab": "Pink Garnet Slab",
+  "block.tutorial_mod.pink_garnet_button": "Pink Garnet Button",
+  "block.tutorial_mod.pink_garnet_pressure_plate": "Pink Garnet Pressure Plate",
+  "block.tutorial_mod.pink_garnet_fence": "Pink Garnet Fence",
+  "block.tutorial_mod.pink_garnet_fence_gate": "Pink Garnet Fence Gate",
+  "block.tutorial_mod.pink_garnet_wall": "Pink Garnet Wall",
+  "block.tutorial_mod.pink_garnet_trapdoor": "Pink Garnet Trapdoor",
+  "block.tutorial_mod.pink_garnet_door": "Pink Garnet Door"
 
 }

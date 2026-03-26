@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tutorial_mod:block/pink_garnet_slab"
+    },
+    "type=double": {
+      "model": "tutorial_mod:block/pink_garnet_block"
+    },
+    "type=top": {
+      "model": "tutorial_mod:block/pink_garnet_slab_top"
+    }
+  }
+}

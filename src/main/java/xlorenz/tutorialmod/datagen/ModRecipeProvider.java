@@ -7,6 +7,7 @@ import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.data.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryEntryLookup;
@@ -51,6 +52,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PINK_GARNET_BLOCK), conditionsFromItem(ModBlocks.PINK_GARNET_BLOCK))
                         .criterion(hasItem(ModItems.STAR_LIGHT_ASHES), conditionsFromItem(ModItems.STAR_LIGHT_ASHES))
                         .offerTo(exporter);
+
+                createButtonRecipe(ModBlocks.PINK_GARNET_BUTTON, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+                createDoorRecipe(ModBlocks.PINK_GARNET_DOOR, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+                createFenceRecipe(ModBlocks.PINK_GARNET_FENCE, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+                createFenceGateRecipe(ModBlocks.PINK_GARNET_FENCE_GATE, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+                createPressurePlateRecipe(RecipeCategory.REDSTONE, ModBlocks.PINK_GARNET_PRESSURE_PLATE, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+                createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_GARNET_SLAB, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+                createStairsRecipe(ModBlocks.PINK_GARNET_STAIRS, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+                createTrapdoorRecipe(ModBlocks.PINK_GARNET_TRAPDOOR, Ingredient.ofItem(ModBlocks.PINK_GARNET_BLOCK));
+
 
             }
         };

@@ -1,3 +1,6 @@
 // 1.21.11	-999999999-01-01T00:00:00	tutorial mod/Tags for minecraft:block
+65216cde3332a9ab682f7bef54b50fad2511b9c2 data/minecraft/tags/block/fence_gates.json
+f0e494a59f79d5ce4a264ea5e4e03788b5165389 data/minecraft/tags/block/fences.json
 6a7a7af780200df6a26863303269510d70e7e20b data/minecraft/tags/block/mineable/pickaxe.json
 f3b96053391de7d150f1498573c27609968116ee data/minecraft/tags/block/needs_iron_tool.json
+a594433aa2d87294dfeffee271c9f9736dca7ae3 data/minecraft/tags/block/walls.json
