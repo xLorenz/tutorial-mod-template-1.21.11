@@ -1,9 +1,7 @@
 package xlorenz.tutorialmod.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.ExperienceDroppingBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -53,6 +51,47 @@ public class ModBlocks {
             .requiresTool()
     );
 
+    public static final Block PINK_GARNET_STAIRS = register("pink_garnet_stairs", new StairsBlock(ModBlocks.PINK_GARNET_BLOCK.getDefaultState(), AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+    ));
+    public static final Block PINK_GARNET_SLAB = register("pink_garnet_slab", new SlabBlock(AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+    ));
+    public static final Block PINK_GARNET_BUTTON = register("pink_garnet_button", new ButtonBlock(BlockSetType.IRON, 2, AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+            .noCollision()
+    ));
+    public static final Block PINK_GARNET_PRESSURE_PLATE = register("pink_garnet_pressure_plate", new PressurePlateBlock(BlockSetType.IRON, AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+    ));
+    public static final Block PINK_GARNET_FENCE = register("pink_garnet_fence", new FenceBlock(AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+    ));
+
+    public static final Block PINK_GARNET_FENCE_GATE = register("pink_garnet_fence_gate", new FenceGateBlock(WoodType.ACACIA, AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+    ));
+    public static final Block PINK_GARNET_WALL = register("pink_garnet_wall", new WallBlock(AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+    ));
+    public static final Block PINK_GARNET_DOOR = register("pink_garnet_door", new DoorBlock(BlockSetType.IRON, AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+            .nonOpaque()
+    ));
+    public static final Block PINK_GARNET_TRAPDOOR = register("pink_garnet_trapdoor", new TrapdoorBlock(BlockSetType.IRON, AbstractBlock.Settings.create()
+            .strength(2f)
+            .requiresTool()
+            .nonOpaque()
+    ));
+
 
 
     private static Block registerBlock(String name, AbstractBlock.Settings settings) {
@@ -79,6 +118,16 @@ public class ModBlocks {
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
 
         Block block = blockFactory.apply(settings.registryKey(blockKey));
+
+        Registry.register(Registries.BLOCK, blockKey, block);
+        registerBlockItem(name, block);
+
+        return  block;
+    }
+    public static Block register(String name, Block block) {
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
+
+        block.getSettings().registryKey((blockKey));
 
         Registry.register(Registries.BLOCK, blockKey, block);
         registerBlockItem(name, block);
