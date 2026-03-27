@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.custom.MagicBlock;
+import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
 
 import java.util.function.Function;
 
@@ -100,6 +101,13 @@ public class ModBlocks {
             .requiresTool()
             .nonOpaque()
             .registryKey(getRegistryKey("pink_garnet_trapdoor"))
+    ));
+
+    public static final Block PINK_GARNET_LAMP = register("pink_garnet_lamp", new PinkGarnetLampBlock(AbstractBlock.Settings.create()
+            .strength(1f)
+            .requiresTool().
+            luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 : 0)
+            .registryKey(getRegistryKey("pink_garnet_lamp"))
     ));
 
 

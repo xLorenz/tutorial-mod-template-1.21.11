@@ -37,6 +37,8 @@ public class ModItemGroups {
         entries.add(ModBlocks.PINK_GARNET_FENCE);
         entries.add(ModBlocks.PINK_GARNET_FENCE_GATE);
         entries.add(ModBlocks.PINK_GARNET_WALL);
+
+        entries.add(ModBlocks.PINK_GARNET_LAMP);
     }));
 
     public static  final ItemGroup GARNET_TOOLS_TAB = register("garnet_tools_group", ModItems.CHISEL, (((displayContext, entries) -> {

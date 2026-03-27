@@ -3,17 +3,24 @@ package xlorenz.tutorialmod.datagen;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
+import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.registry.Registries;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.ModBlocks;
+import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
 import xlorenz.tutorialmod.items.ModItems;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+
+import static net.minecraft.client.data.BlockStateModelGenerator.createBooleanModelMap;
+import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -38,14 +45,15 @@ public class ModModelProvider extends FabricModelProvider {
         pinkGarnetPool.fenceGate(ModBlocks.PINK_GARNET_FENCE_GATE);
         pinkGarnetPool.wall(ModBlocks.PINK_GARNET_WALL);
 
-
-
-
         blockStateModelGenerator.registerTrapdoor(ModBlocks.PINK_GARNET_TRAPDOOR);
 
         blockStateModelGenerator.registerDoor(ModBlocks.PINK_GARNET_DOOR);
 
-    }
+
+        WeightedVariant weightedVariant = createWeightedVariant(TexturedModel.CUBE_ALL.upload(ModBlocks.PINK_GARNET_LAMP, blockStateModelGenerator.modelCollector));
+        WeightedVariant weightedVariant2 = createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PINK_GARNET_LAMP, "_on", Models.CUBE_ALL, TextureMap::all));
+        blockStateModelGenerator.blockStateCollector
+                .accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PINK_GARNET_LAMP).with(createBooleanModelMap(PinkGarnetLampBlock.CLICKED, weightedVariant2, weightedVariant)));    }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
