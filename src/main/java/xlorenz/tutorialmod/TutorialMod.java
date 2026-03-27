@@ -9,6 +9,7 @@ import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xlorenz.tutorialmod.block.ModBlocks;
+import xlorenz.tutorialmod.components.ModDataComponentTypes;
 import xlorenz.tutorialmod.items.ModItemGroups;
 import xlorenz.tutorialmod.items.ModItems;
 
@@ -22,6 +23,7 @@ public class TutorialMod implements ModInitializer {
 		ModItems.initialize();
 		ModBlocks.initialize();
 		ModItemGroups.initialize();
+		ModDataComponentTypes.initialize();
 
 		FuelRegistryEvents.BUILD.register((builder, context) -> {
 			builder.add(ModItems.STAR_LIGHT_ASHES, 30 * 20);
@@ -34,6 +36,11 @@ public class TutorialMod implements ModInitializer {
 			}
 			if(itemStack.isOf(ModBlocks.MAGIC_BLOCK.asItem())){
 				list.add(Text.translatable(ModBlocks.MAGIC_BLOCK.getTranslationKey() + ".tooltip0"));
+			}
+			if(itemStack.isOf(ModItems.CHISEL)){
+				if(itemStack.get(ModDataComponentTypes.COORDINATES) != null) {
+					list.add(Text.literal("Last Block Changed: " + itemStack.get(ModDataComponentTypes.COORDINATES)));
+				}
 			}
 		}));
 

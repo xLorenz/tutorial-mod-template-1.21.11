@@ -2,18 +2,24 @@ package xlorenz.tutorialmod.items.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 import xlorenz.tutorialmod.block.ModBlocks;
+import xlorenz.tutorialmod.components.ModDataComponentTypes;
 
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class ChiselItem extends Item {
 
@@ -43,7 +49,8 @@ public class ChiselItem extends Item {
 
                 world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
 
-
+                //add coords to component
+                context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
             }
             return ActionResult.SUCCESS;
         }
