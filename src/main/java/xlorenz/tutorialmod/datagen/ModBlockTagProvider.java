@@ -6,7 +6,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.block.ModBlocks;
+import xlorenz.tutorialmod.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -34,5 +36,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getTagBuilder(BlockTags.FENCE_GATES).add(Registries.BLOCK.getId(ModBlocks.PINK_GARNET_FENCE_GATE));
 
         getTagBuilder(BlockTags.WALLS).add(Registries.BLOCK.getId(ModBlocks.PINK_GARNET_WALL));
+
+        getTagBuilder(ModTags.Blocks.NEED_PINK_GARNET_TOOL)
+                .add(Registries.BLOCK.getId(ModBlocks.MAGIC_BLOCK))
+                .addTag(Identifier.of("minecraft:needs_iron_tool"));
     }
 }

@@ -64,6 +64,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BOOST_STAFF, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAULIFLOWER, Models.GENERATED);
         itemModelGenerator.register(ModItems.STAR_LIGHT_ASHES, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.PINK_GARNET_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_HOE, Models.HANDHELD);
     }
 
     private void registerBlockAndItem(BlockStateModelGenerator gen, Block block) {

@@ -44,6 +44,11 @@ public class ModItemGroups {
     public static  final ItemGroup GARNET_TOOLS_TAB = register("garnet_tools_group", ModItems.CHISEL, (((displayContext, entries) -> {
         entries.add(ModItems.CHISEL);
         entries.add(ModItems.BOOST_STAFF);
+        entries.add(ModItems.PINK_GARNET_SWORD);
+        entries.add(ModItems.PINK_GARNET_PICKAXE);
+        entries.add(ModItems.PINK_GARNET_AXE);
+        entries.add(ModItems.PINK_GARNET_SHOVEL);
+        entries.add(ModItems.PINK_GARNET_HOE);
     })));
 
 

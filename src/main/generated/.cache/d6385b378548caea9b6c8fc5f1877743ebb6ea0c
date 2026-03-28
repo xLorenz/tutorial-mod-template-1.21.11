@@ -4,3 +4,4 @@ f0e494a59f79d5ce4a264ea5e4e03788b5165389 data/minecraft/tags/block/fences.json
 6a7a7af780200df6a26863303269510d70e7e20b data/minecraft/tags/block/mineable/pickaxe.json
 f3b96053391de7d150f1498573c27609968116ee data/minecraft/tags/block/needs_iron_tool.json
 a594433aa2d87294dfeffee271c9f9736dca7ae3 data/minecraft/tags/block/walls.json
+cf19712ab541e98eb859df8582622f62a9e76d2d data/tutorial_mod/tags/block/need_pink_garnet_tool.json
