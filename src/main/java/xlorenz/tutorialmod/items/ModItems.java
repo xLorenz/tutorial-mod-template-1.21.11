@@ -17,6 +17,7 @@ import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.items.custom.BoostStaffItem;
 import xlorenz.tutorialmod.items.custom.ChiselItem;
+import xlorenz.tutorialmod.items.custom.HammerItem;
 
 import java.util.function.Function;
 
@@ -52,6 +53,10 @@ public  class ModItems {
     public static final Item PINK_GARNET_HOE = register("pink_garnet_hoe", new HoeItem(ModToolMaterials.PINK_GARNET_TOOL_MATERIAL, 0f,-1f,
             new Item.Settings().registryKey(getKey("pink_garnet_hoe")))
     );
+
+
+    public static final Item PINK_GARNET_HAMMER = register("pink_garnet_hammer",
+            new HammerItem(new Item.Settings().registryKey(getKey("pink_garnet_hammer"))));
 
 
 
