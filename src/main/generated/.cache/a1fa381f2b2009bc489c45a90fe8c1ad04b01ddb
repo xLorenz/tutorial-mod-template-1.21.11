@@ -1,7 +1,7 @@
 // 1.21.11	-999999999-01-01T00:00:00	tutorial mod/Tags for minecraft:item
 0e62950a460a02d1f78f88f196d344a1415b1375 data/minecraft/tags/item/axes.json
 988b9b8f5f0c643147f17feac02edd4841ba5cc6 data/minecraft/tags/item/hoes.json
-31215193c07dfaeee5d06ac8ccc8beadd0b99118 data/minecraft/tags/item/pickaxes.json
+aaf1f7ab533a2a67e401691e5ff0e825fb575ead data/minecraft/tags/item/pickaxes.json
 8080ac4b46bb9b0303f962008b038d2707b3978b data/minecraft/tags/item/shovels.json
 66924b127cc9cff27d5285e35e7f1ed5f867e515 data/minecraft/tags/item/swords.json
 ac537fdb1a36f702b505fedc4acc53924d89011c data/tutorial_mod/tags/item/repairs_pink_garnet_tools.json

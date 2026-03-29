@@ -3,6 +3,7 @@ package xlorenz.tutorialmod;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
@@ -12,6 +13,7 @@ import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.components.ModDataComponentTypes;
 import xlorenz.tutorialmod.items.ModItemGroups;
 import xlorenz.tutorialmod.items.ModItems;
+import xlorenz.tutorialmod.util.HammerUsageEvent;
 
 public class TutorialMod implements ModInitializer {
 	public static final String MOD_ID = "tutorial_mod";
@@ -28,6 +30,8 @@ public class TutorialMod implements ModInitializer {
 		FuelRegistryEvents.BUILD.register((builder, context) -> {
 			builder.add(ModItems.STAR_LIGHT_ASHES, 30 * 20);
 		});
+
+		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 
 		ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipType, list) -> {
 			if(itemStack.isOf(ModItems.PINK_GARNET)){

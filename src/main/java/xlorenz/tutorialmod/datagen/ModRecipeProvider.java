@@ -103,7 +103,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('S', Items.STICK)
                         .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.TOOLS, ModItems.PINK_GARNET_HOE)
+                ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.TOOLS, ModItems.PINK_GARNET_HAMMER)
                         .pattern("GGG")
                         .pattern("GSG")
                         .pattern(" S ")

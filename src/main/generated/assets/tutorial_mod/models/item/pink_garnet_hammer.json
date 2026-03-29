@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_mace",
+  "textures": {
+    "layer0": "tutorial_mod:item/pink_garnet_hammer"
+  }
+}
