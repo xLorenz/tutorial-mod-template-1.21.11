@@ -12,6 +12,11 @@
   "item.tutorial_mod.pink_garnet_hoe": "Pink Garnet Hoe",
   "item.tutorial_mod.pink_garnet_hammer": "Pink Garnet Hammer",
 
+  "item.tutorial_mod.pink_garnet_helmet": "Pink Garnet Helmet",
+  "item.tutorial_mod.pink_garnet_chestplate": "Pink Garnet Chestplate",
+  "item.tutorial_mod.pink_garnet_leggings": "Pink Garnet Leggings",
+  "item.tutorial_mod.pink_garnet_boots": "Pink Garnet Bootsm",
+
   "item.tutorial_mod.pink_garnet.tooltip0": "Hola :)",
   "item.tutorial_mod.pink_garnet.tooltip1": "§1COMO ESTAS O-O",
   "item.tutorial_mod.star_light_ashes.tooltip": "Press shift please",

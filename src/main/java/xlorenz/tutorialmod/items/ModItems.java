@@ -8,6 +8,7 @@ import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ShovelItem;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -57,6 +58,15 @@ public  class ModItems {
 
     public static final Item PINK_GARNET_HAMMER = register("pink_garnet_hammer",
             new HammerItem(new Item.Settings().registryKey(getKey("pink_garnet_hammer"))));
+
+    public static final Item PINK_GARNET_HELMET = register("pink_garnet_helmet", Item::new,
+            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.HELMET).maxDamage(EquipmentType.HELMET.getMaxDamage(15)));
+    public static final Item PINK_GARNET_CHESTPLATE = register("pink_garnet_chestplate", Item::new,
+            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.CHESTPLATE).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15)));
+    public static final Item PINK_GARNET_LEGGINGS = register("pink_garnet_leggings", Item::new,
+            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.LEGGINGS).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15)));
+    public static final Item PINK_GARNET_BOOTS = register("pink_garnet_boots", Item::new,
+            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.BOOTS).maxDamage(EquipmentType.BOOTS.getMaxDamage(15)));
 
 
 
