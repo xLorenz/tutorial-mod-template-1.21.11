@@ -19,6 +19,7 @@ import java.util.function.Supplier;
 
 public class ModArmorMaterials {
 
+    public static RegistryKey<EquipmentAsset> PINK_GARNET_ARMOR_MATERIAL_KEY = registerEquipmentAsset("pink_garnet");
     public static ArmorMaterial PINK_GARNET_ARMOR_MATERIAL = new ArmorMaterial(
             1000,
             ArmorMaterials.createDefenseMap(2,4,6,2,4),
@@ -27,7 +28,7 @@ public class ModArmorMaterials {
             10f,
             2f,
             ModTags.Items.REPAIRS_PINK_GARNET_TOOLS,
-            registerEquipmentAsset("pink_garnet")
+            PINK_GARNET_ARMOR_MATERIAL_KEY
             );
 
 

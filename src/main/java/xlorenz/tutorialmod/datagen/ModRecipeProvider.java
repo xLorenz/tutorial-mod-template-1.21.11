@@ -11,7 +11,6 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryWrapper;
 import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.items.ModItems;
@@ -111,8 +110,46 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('S', Items.STICK)
                         .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                         .offerTo(exporter);
+
+                generateArmorRecipes(ModItems.PINK_GARNET,
+                        ModItems.PINK_GARNET_HELMET,
+                        ModItems.PINK_GARNET_CHESTPLATE,
+                        ModItems.PINK_GARNET_LEGGINGS,
+                        ModItems.PINK_GARNET_BOOTS,
+                        exporter,
+                        this
+                );
             }
         };
+    }
+
+    public static void generateArmorRecipes(Item baseItem, Item helmet, Item chestplate, Item leggings, Item boots, RecipeExporter exporter, RecipeGenerator generator) {
+        ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.COMBAT, boots)
+                .input('X', baseItem)
+                .pattern("X X")
+                .pattern("X X")
+                .criterion(RecipeGenerator.hasItem(baseItem), generator.conditionsFromItem(baseItem))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.COMBAT, chestplate)
+                .input('X', baseItem)
+                .pattern("X X")
+                .pattern("XXX")
+                .pattern("XXX")
+                .criterion(RecipeGenerator.hasItem(baseItem), generator.conditionsFromItem(baseItem))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.COMBAT, helmet)
+                .input('X', baseItem)
+                .pattern("XXX")
+                .pattern("X X")
+                .criterion(RecipeGenerator.hasItem(baseItem), generator.conditionsFromItem(baseItem))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.COMBAT, leggings)
+                .input('X', baseItem)
+                .pattern("XXX")
+                .pattern("X X")
+                .pattern("X X")
+                .criterion(RecipeGenerator.hasItem(baseItem), generator.conditionsFromItem(baseItem))
+                .offerTo(exporter);
     }
 
     @Override
