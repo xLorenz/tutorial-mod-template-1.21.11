@@ -71,6 +71,8 @@ public  class ModItems {
                     new Item.Settings().registryKey(getKey("pink_garnet_boots"))));
 
 
+    public static final Item PINK_GARNET_HORSE_ARMOR = register("pink_garnet_horse_armor", Item::new,
+            new Item.Settings().horseArmor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL));
 
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
