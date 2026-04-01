@@ -19,6 +19,8 @@
 
   "item.tutorial_mod.pink_garnet_horse_armor": "Pink Garnet Horse Armor",
 
+  "item.tutorial_mod.kaupen_armor_smithing_template": "Kaupen Smithing Template",
+
   "item.tutorial_mod.pink_garnet.tooltip0": "Hola :)",
   "item.tutorial_mod.pink_garnet.tooltip1": "§1COMO ESTAS O-O",
   "item.tutorial_mod.star_light_ashes.tooltip": "Press shift please",
@@ -48,6 +50,10 @@
   "block.tutorial_mod.pink_garnet_fence_gate": "Pink Garnet Fence Gate",
   "block.tutorial_mod.pink_garnet_wall": "Pink Garnet Wall",
   "block.tutorial_mod.pink_garnet_trapdoor": "Pink Garnet Trapdoor",
-  "block.tutorial_mod.pink_garnet_door": "Pink Garnet Door"
+  "block.tutorial_mod.pink_garnet_door": "Pink Garnet Door",
+
+  "trim_material.tutorial_mod.pink_garnet": "Pink Garnet Material",
+  "trim_pattern.tutorial_mod.kauoen": "Kaupen Armor Pattern"
+
 
 }

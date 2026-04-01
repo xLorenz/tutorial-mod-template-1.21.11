@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": "tutorial_mod:pink_garnet"
+  },
+  "pattern": [
+    "  G",
+    "GGG",
+    "G G"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tutorial_mod:pink_garnet_horse_armor"
+  }
+}

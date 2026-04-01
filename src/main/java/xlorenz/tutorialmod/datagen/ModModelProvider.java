@@ -81,6 +81,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
         itemModelGenerator.register(ModItems.PINK_GARNET_HORSE_ARMOR, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
     }
 
     private void registerBlockAndItem(BlockStateModelGenerator gen, Block block) {

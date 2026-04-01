@@ -4,10 +4,7 @@ import net.minecraft.client.gui.tooltip.TooltipComponent;
 import net.minecraft.component.ComponentType;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.AttributeModifiersComponent;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -15,18 +12,20 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.dedicated.management.RpcDiscover;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.items.custom.BoostStaffItem;
 import xlorenz.tutorialmod.items.custom.ChiselItem;
 import xlorenz.tutorialmod.items.custom.HammerItem;
 import xlorenz.tutorialmod.items.custom.ModArmorItem;
+import xlorenz.tutorialmod.trim.ModTrimMaterials;
 
 import java.util.function.Function;
 
 public  class ModItems {
 
     public static final Item ADAMANTITE_INGOT = register("adamantite_ingot", Item::new, new Item.Settings());
-    public static final Item PINK_GARNET = register("pink_garnet", Item::new, new Item.Settings());
+    public static final Item PINK_GARNET = register("pink_garnet", Item::new, new Item.Settings().trimMaterial(ModTrimMaterials.PINK_GARNET));
     public static final Item RAW_PINK_GARNET = register("raw_pink_garnet", Item::new, new Item.Settings());
 
     public static final Item CHISEL = register("chisel", ChiselItem::new,
@@ -73,6 +72,10 @@ public  class ModItems {
 
     public static final Item PINK_GARNET_HORSE_ARMOR = register("pink_garnet_horse_armor", Item::new,
             new Item.Settings().horseArmor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL));
+
+
+    public static final Item KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE = register("kaupen_armor_smithing_template", SmithingTemplateItem::of, new Item.Settings().rarity(Rarity.RARE));
+
 
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {

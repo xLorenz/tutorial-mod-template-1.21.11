@@ -11,9 +11,14 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
+import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.items.ModItems;
+import xlorenz.tutorialmod.trim.ModTrimPatterns;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -119,7 +124,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         exporter,
                         this
                 );
-                ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.TOOLS, ModItems.PINK_GARNET_HAMMER)
+                ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.TOOLS, ModItems.PINK_GARNET_HORSE_ARMOR)
                         .pattern("  G")
                         .pattern("GGG")
                         .pattern("G G")
@@ -127,6 +132,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
                         .offerTo(exporter);
 
+                offerSmithingTrimRecipe(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE, ModTrimPatterns.KAUPEN, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(TutorialMod.MOD_ID, getItemPath(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE) + "_smithing_trim")));
+
+                offerSmithingTemplateCopyingRecipe(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE, ModBlocks.MAGIC_BLOCK);
 
             }
         };

@@ -4,6 +4,7 @@
 aaf1f7ab533a2a67e401691e5ff0e825fb575ead data/minecraft/tags/item/pickaxes.json
 8080ac4b46bb9b0303f962008b038d2707b3978b data/minecraft/tags/item/shovels.json
 66924b127cc9cff27d5285e35e7f1ed5f867e515 data/minecraft/tags/item/swords.json
+ac537fdb1a36f702b505fedc4acc53924d89011c data/minecraft/tags/item/trim_materials.json
 54ab61d9f34da3f1888aafa7b77db2413702556c data/minecraft/tags/item/trimmable_armor.json
 ac537fdb1a36f702b505fedc4acc53924d89011c data/tutorial_mod/tags/item/repairs_pink_garnet_tools.json
 ac537fdb1a36f702b505fedc4acc53924d89011c data/tutorial_mod/tags/item/transformable_items.json

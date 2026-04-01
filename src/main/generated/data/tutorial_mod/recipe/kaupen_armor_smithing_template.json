@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:diamond",
+    "C": "tutorial_mod:magic_block",
+    "S": "tutorial_mod:kaupen_armor_smithing_template"
+  },
+  "pattern": [
+    "#S#",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "tutorial_mod:kaupen_armor_smithing_template"
+  }
+}

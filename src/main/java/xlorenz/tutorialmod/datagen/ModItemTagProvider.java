@@ -35,5 +35,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Registries.ITEM.getId(ModItems.PINK_GARNET_CHESTPLATE))
                 .add(Registries.ITEM.getId(ModItems.PINK_GARNET_LEGGINGS))
                 .add(Registries.ITEM.getId(ModItems.PINK_GARNET_BOOTS));
+
+        getTagBuilder(ItemTags.TRIM_MATERIALS)
+                .add(Registries.ITEM.getId(ModItems.PINK_GARNET));
     }
 }
