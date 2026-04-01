@@ -5,8 +5,18 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
+import net.minecraft.client.render.item.model.ItemModel;
+import net.minecraft.client.render.item.model.SelectItemModel;
+import net.minecraft.client.render.item.property.select.TrimMaterialProperty;
+import net.minecraft.client.render.item.tint.DyeTintSource;
 import net.minecraft.client.render.model.json.WeightedVariant;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.item.equipment.EquipmentAsset;
 import net.minecraft.item.equipment.EquipmentAssetKeys;
+import net.minecraft.item.equipment.trim.ArmorTrimAssets;
+import net.minecraft.item.equipment.trim.ArmorTrimMaterial;
+import net.minecraft.item.equipment.trim.ArmorTrimMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.state.property.Properties;
@@ -16,6 +26,8 @@ import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
 import xlorenz.tutorialmod.items.ModArmorMaterials;
 import xlorenz.tutorialmod.items.ModItems;
+import xlorenz.tutorialmod.trim.ModArmorTrimAssets;
+import xlorenz.tutorialmod.trim.ModTrimMaterials;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -75,14 +87,19 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PINK_GARNET_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PINK_GARNET_HAMMER, Models.HANDHELD_MACE);
 
-        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_HELMET, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_CHESTPLATE, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINGS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-
         itemModelGenerator.register(ModItems.PINK_GARNET_HORSE_ARMOR, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
+
+        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_HELMET, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_CHESTPLATE, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINGS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+
+        registerArmorTrim(itemModelGenerator,ModArmorTrimAssets.PINK_GARNET,ModTrimMaterials.PINK_GARNET);
+
+
+
     }
 
     private void registerBlockAndItem(BlockStateModelGenerator gen, Block block) {
@@ -95,6 +112,131 @@ public class ModModelProvider extends FabricModelProvider {
 
         gen.registerItemModel(block.asItem(), Identifier.of(TutorialMod.MOD_ID, "block/" + Registries.BLOCK.getId(block).getPath()));
 
+    }
+
+    public void registerArmorTrim(ItemModelGenerator gen, ArmorTrimAssets trimAsset, RegistryKey<ArmorTrimMaterial> trimMaterial) {
+
+        List<ItemModelGenerator.TrimMaterial> materials = new ArrayList<>();
+
+        materials.addAll(ItemModelGenerator.TRIM_MATERIALS);
+        materials.add(new ItemModelGenerator.TrimMaterial(trimAsset, trimMaterial));
+
+
+        registerArmor(gen,materials, Items.TURTLE_HELMET, EquipmentAssetKeys.TURTLE_SCUTE, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.LEATHER_HELMET, EquipmentAssetKeys.LEATHER, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, true);
+        registerArmor(gen,materials, Items.LEATHER_CHESTPLATE, EquipmentAssetKeys.LEATHER, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, true);
+        registerArmor(gen,materials, Items.LEATHER_LEGGINGS, EquipmentAssetKeys.LEATHER, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, true);
+        registerArmor(gen,materials, Items.LEATHER_BOOTS, EquipmentAssetKeys.LEATHER, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, true);
+        registerArmor(gen,materials, Items.COPPER_HELMET, EquipmentAssetKeys.COPPER, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.COPPER_CHESTPLATE, EquipmentAssetKeys.COPPER, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.COPPER_LEGGINGS, EquipmentAssetKeys.COPPER, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.COPPER_BOOTS, EquipmentAssetKeys.COPPER, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.CHAINMAIL_HELMET, EquipmentAssetKeys.CHAINMAIL, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.CHAINMAIL_CHESTPLATE, EquipmentAssetKeys.CHAINMAIL, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.CHAINMAIL_LEGGINGS, EquipmentAssetKeys.CHAINMAIL, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.CHAINMAIL_BOOTS, EquipmentAssetKeys.CHAINMAIL, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.IRON_HELMET, EquipmentAssetKeys.IRON, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.IRON_CHESTPLATE, EquipmentAssetKeys.IRON, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.IRON_LEGGINGS, EquipmentAssetKeys.IRON, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.IRON_BOOTS, EquipmentAssetKeys.IRON, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.DIAMOND_HELMET, EquipmentAssetKeys.DIAMOND, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.DIAMOND_CHESTPLATE, EquipmentAssetKeys.DIAMOND, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.DIAMOND_LEGGINGS, EquipmentAssetKeys.DIAMOND, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.DIAMOND_BOOTS, EquipmentAssetKeys.DIAMOND, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.GOLDEN_HELMET, EquipmentAssetKeys.GOLD, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.GOLDEN_CHESTPLATE, EquipmentAssetKeys.GOLD, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.GOLDEN_LEGGINGS, EquipmentAssetKeys.GOLD, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.GOLDEN_BOOTS, EquipmentAssetKeys.GOLD, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.NETHERITE_HELMET, EquipmentAssetKeys.NETHERITE, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.NETHERITE_CHESTPLATE, EquipmentAssetKeys.NETHERITE, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.NETHERITE_LEGGINGS, EquipmentAssetKeys.NETHERITE, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, Items.NETHERITE_BOOTS, EquipmentAssetKeys.NETHERITE, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+
+
+        registerArmor(gen,materials, ModItems.PINK_GARNET_HELMET, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, ModItems.PINK_GARNET_CHESTPLATE, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, ModItems.PINK_GARNET_LEGGINGS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        registerArmor(gen,materials, ModItems.PINK_GARNET_BOOTS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+
+
+
+    }
+
+    public SelectItemModel.SwitchCase<RegistryKey<ArmorTrimMaterial>> registerArmor(ItemModelGenerator gen, ArmorTrimAssets trimAsset, RegistryKey<ArmorTrimMaterial> trimMaterial, Item item, RegistryKey<EquipmentAsset> equipmentKey, Identifier trimIdPrefix, boolean dyeable) {
+        Identifier identifier = ModelIds.getItemModelId(item);
+        Identifier identifier2 = TextureMap.getId(item);
+        Identifier identifier3 = TextureMap.getSubId(item, "_overlay");
+
+        ItemModelGenerator.TrimMaterial material = new ItemModelGenerator.TrimMaterial(trimAsset, trimMaterial);
+
+        Identifier identifier4 = identifier.withSuffixedPath("_" + material.assets().base().suffix() + "_trim");
+        Identifier identifier5 = trimIdPrefix.withSuffixedPath("_" + material.assets().getAssetId(equipmentKey).suffix());
+        ItemModel.Unbaked unbaked;
+        if (dyeable) {
+            gen.uploadArmor(identifier4, identifier2, identifier3, identifier5);
+            unbaked = ItemModels.tinted(identifier4, new DyeTintSource(-6265536));
+        } else {
+            gen.uploadArmor(identifier4, identifier2, identifier5);
+            unbaked = ItemModels.basic(identifier4);
+        }
+
+        return ItemModels.switchCase(trimMaterial, unbaked);
+    }
+
+    public void registerArmor(
+            ItemModelGenerator gen,
+            List<ItemModelGenerator.TrimMaterial> trimMaterials,
+            Item item,
+            RegistryKey<EquipmentAsset> equipmentKey,
+            Identifier trimIdPrefix,
+            boolean dyeable
+    ) {
+        Identifier baseId = ModelIds.getItemModelId(item);
+        Identifier layer0 = TextureMap.getId(item);
+        Identifier overlay = TextureMap.getSubId(item, "_overlay");
+
+        List<SelectItemModel.SwitchCase<RegistryKey<ArmorTrimMaterial>>> cases = new ArrayList<>();
+
+        for (ItemModelGenerator.TrimMaterial material : trimMaterials) {
+            Identifier modelId = baseId.withSuffixedPath(
+                    "_" + material.assets().base().suffix() + "_trim"
+            );
+            Identifier identifier5 = trimIdPrefix.withSuffixedPath("_" + material.assets().getAssetId(equipmentKey).suffix());
+
+            ItemModel.Unbaked unbaked;
+
+            if (dyeable) {
+                gen.uploadArmor(modelId, layer0, overlay, identifier5);
+                unbaked = ItemModels.tinted(modelId, new DyeTintSource(-6265536));
+            } else {
+                gen.uploadArmor(modelId, layer0, identifier5);
+                unbaked = ItemModels.basic(modelId);
+            }
+
+            cases.add(ItemModels.switchCase(material.materialKey(), unbaked));
+        }
+
+        // Base (fallback) model
+        ItemModel.Unbaked fallback;
+
+        if (dyeable) {
+            Models.GENERATED_TWO_LAYERS.upload(baseId,
+                    TextureMap.layered(layer0, overlay),
+                    gen.modelCollector);
+            fallback = ItemModels.tinted(baseId, new DyeTintSource(-6265536));
+        } else {
+            Models.GENERATED.upload(baseId,
+                    TextureMap.layer0(layer0),
+                    gen.modelCollector);
+            fallback = ItemModels.basic(baseId);
+        }
+
+        // 🔥 THIS generates the items/<armor>.json file
+        gen.output.accept(
+                item,
+                ItemModels.select(new TrimMaterialProperty(), fallback, cases)
+        );
+        // thanks chatgpt
     }
 
     private void registerItems(BlockStateModelGenerator gen, List<Block> blocks) {

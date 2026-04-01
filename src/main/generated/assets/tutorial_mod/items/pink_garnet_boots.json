@@ -78,6 +78,13 @@
           "model": "tutorial_mod:item/pink_garnet_boots_resin_trim"
         },
         "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "tutorial_mod:item/pink_garnet_boots_pink_garnet_trim"
+        },
+        "when": "tutorial_mod:pink_garnet"
       }
     ],
     "fallback": {
