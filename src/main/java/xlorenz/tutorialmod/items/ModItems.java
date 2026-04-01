@@ -19,6 +19,7 @@ import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.items.custom.BoostStaffItem;
 import xlorenz.tutorialmod.items.custom.ChiselItem;
 import xlorenz.tutorialmod.items.custom.HammerItem;
+import xlorenz.tutorialmod.items.custom.ModArmorItem;
 
 import java.util.function.Function;
 
@@ -59,14 +60,16 @@ public  class ModItems {
     public static final Item PINK_GARNET_HAMMER = register("pink_garnet_hammer",
             new HammerItem(new Item.Settings().registryKey(getKey("pink_garnet_hammer"))));
 
-    public static final Item PINK_GARNET_HELMET = register("pink_garnet_helmet", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.HELMET).maxDamage(EquipmentType.HELMET.getMaxDamage(15)));
-    public static final Item PINK_GARNET_CHESTPLATE = register("pink_garnet_chestplate", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.CHESTPLATE).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15)));
-    public static final Item PINK_GARNET_LEGGINGS = register("pink_garnet_leggings", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.LEGGINGS).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15)));
-    public static final Item PINK_GARNET_BOOTS = register("pink_garnet_boots", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.BOOTS).maxDamage(EquipmentType.BOOTS.getMaxDamage(15)));
+
+    public static final Item PINK_GARNET_HELMET = register("pink_garnet_helmet", new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.HELMET,
+                    new Item.Settings().registryKey(getKey("pink_garnet_helmet"))));
+    public static final Item PINK_GARNET_CHESTPLATE = register("pink_garnet_chestplate", new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.CHESTPLATE,
+                    new Item.Settings().registryKey(getKey("pink_garnet_chestplate"))));
+    public static final Item PINK_GARNET_LEGGINGS = register("pink_garnet_leggings", new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.LEGGINGS,
+                    new Item.Settings().registryKey(getKey("pink_garnet_leggings"))));
+    public static final Item PINK_GARNET_BOOTS = register("pink_garnet_boots", new ModArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, EquipmentType.BOOTS,
+                    new Item.Settings().registryKey(getKey("pink_garnet_boots"))));
+
 
 
 

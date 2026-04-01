@@ -21,7 +21,7 @@ public class ModArmorMaterials {
 
     public static RegistryKey<EquipmentAsset> PINK_GARNET_ARMOR_MATERIAL_KEY = registerEquipmentAsset("pink_garnet");
     public static ArmorMaterial PINK_GARNET_ARMOR_MATERIAL = new ArmorMaterial(
-            1000,
+            15,
             ArmorMaterials.createDefenseMap(2,4,6,2,4),
             20,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
