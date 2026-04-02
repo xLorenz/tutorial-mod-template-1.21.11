@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
 import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.model.SelectItemModel;
+import net.minecraft.client.render.item.property.bool.HasComponentProperty;
 import net.minecraft.client.render.item.property.select.TrimMaterialProperty;
 import net.minecraft.client.render.item.tint.DyeTintSource;
 import net.minecraft.client.render.model.json.WeightedVariant;
@@ -24,6 +25,7 @@ import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
+import xlorenz.tutorialmod.components.ModDataComponentTypes;
 import xlorenz.tutorialmod.items.ModArmorMaterials;
 import xlorenz.tutorialmod.items.ModItems;
 import xlorenz.tutorialmod.trim.ModArmorTrimAssets;
@@ -75,7 +77,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ADAMANTITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.PINK_GARNET, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_PINK_GARNET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.BOOST_STAFF, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAULIFLOWER, Models.GENERATED);
         itemModelGenerator.register(ModItems.STAR_LIGHT_ASHES, Models.GENERATED);
@@ -91,15 +92,21 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
 
-        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_HELMET, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_CHESTPLATE, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_LEGGINGS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        //itemModelGenerator.registerArmor(ModItems.PINK_GARNET_BOOTS, ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-
         registerArmorTrim(itemModelGenerator,ModArmorTrimAssets.PINK_GARNET,ModTrimMaterials.PINK_GARNET);
 
+        //itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
+        ItemModel.Unbaked chiselModel = ItemModels.basic(ModelIds.getItemModelId(ModItems.CHISEL));
+        ItemModel.Unbaked chiselUsedModel = ItemModels.basic(itemModelGenerator.registerSubModel(ModItems.CHISEL, "_used", Models.GENERATED));
 
-
+        itemModelGenerator.upload(ModItems.CHISEL, Models.GENERATED);
+        itemModelGenerator.output.accept(
+                ModItems.CHISEL,
+                ItemModels.condition(
+                        new HasComponentProperty(ModDataComponentTypes.COORDINATES, false),
+                        chiselUsedModel,
+                        chiselModel
+                    )
+                );
     }
 
     private void registerBlockAndItem(BlockStateModelGenerator gen, Block block) {
