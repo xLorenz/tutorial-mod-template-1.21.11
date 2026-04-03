@@ -3,10 +3,15 @@ package xlorenz.tutorialmod;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xlorenz.tutorialmod.block.ModBlocks;
@@ -46,6 +51,19 @@ public class TutorialMod implements ModInitializer {
 					list.add(Text.literal("Last Block Changed: " + itemStack.get(ModDataComponentTypes.COORDINATES)));
 				}
 			}
+		}));
+
+		AttackEntityCallback.EVENT.register(((playerEntity, world, hand, entity,entityHitResult) -> {
+
+			if (entity instanceof SheepEntity sheepEntity && !world.isClient()) {
+				if (playerEntity.getMainHandStack().getItem() == ModItems.PINK_GARNET) {
+					playerEntity.sendMessage(Text.literal("Gracias, adiós"),false);
+					playerEntity.getMainHandStack().decrement(1);
+					sheepEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 20*120, 1, false,false));
+					return ActionResult.SUCCESS;
+				}
+			}
+			return ActionResult.PASS;
 		}));
 
 	}
