@@ -96,9 +96,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         //itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         ItemModel.Unbaked chiselModel = ItemModels.basic(ModelIds.getItemModelId(ModItems.CHISEL));
-        ItemModel.Unbaked chiselUsedModel = ItemModels.basic(itemModelGenerator.registerSubModel(ModItems.CHISEL, "_used", Models.GENERATED));
+        ItemModel.Unbaked chiselUsedModel = ItemModels.basic(itemModelGenerator.registerSubModel(ModItems.CHISEL, "_used", Models.HANDHELD));
 
-        itemModelGenerator.upload(ModItems.CHISEL, Models.GENERATED);
+        itemModelGenerator.upload(ModItems.CHISEL, Models.HANDHELD);
         itemModelGenerator.output.accept(
                 ModItems.CHISEL,
                 ItemModels.condition(
@@ -107,6 +107,9 @@ public class ModModelProvider extends FabricModelProvider {
                         chiselModel
                     )
                 );
+        itemModelGenerator.upload(ModItems.KAUPEN_BOW, Models.HANDHELD);
+        itemModelGenerator.registerBow(ModItems.KAUPEN_BOW);
+
     }
 
     private void registerBlockAndItem(BlockStateModelGenerator gen, Block block) {

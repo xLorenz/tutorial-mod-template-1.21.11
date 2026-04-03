@@ -136,6 +136,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 offerSmithingTemplateCopyingRecipe(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE, ModBlocks.MAGIC_BLOCK);
 
+                ShapedRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.TOOLS, ModItems.KAUPEN_BOW)
+                        .pattern(" GS")
+                        .pattern("G S")
+                        .pattern(" GS")
+                        .input('G', ModItems.PINK_GARNET)
+                        .input('S', Items.STRING)
+                        .criterion(hasItem(ModItems.PINK_GARNET), conditionsFromItem(ModItems.PINK_GARNET))
+                        .offerTo(exporter);
+
+
             }
         };
     }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": "tutorial_mod:pink_garnet",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    " GS",
+    "G S",
+    " GS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tutorial_mod:kaupen_bow"
+  }
+}

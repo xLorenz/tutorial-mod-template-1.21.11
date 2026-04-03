@@ -76,6 +76,7 @@ public  class ModItems {
 
     public static final Item KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE = register("kaupen_armor_smithing_template", SmithingTemplateItem::of, new Item.Settings().rarity(Rarity.RARE));
 
+    public static final Item KAUPEN_BOW = register("kaupen_bow", BowItem::new, new Item.Settings().maxDamage(200));
 
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
