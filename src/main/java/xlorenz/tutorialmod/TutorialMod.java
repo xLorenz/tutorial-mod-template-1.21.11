@@ -18,6 +18,7 @@ import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.components.ModDataComponentTypes;
 import xlorenz.tutorialmod.items.ModItemGroups;
 import xlorenz.tutorialmod.items.ModItems;
+import xlorenz.tutorialmod.sound.ModSounds;
 import xlorenz.tutorialmod.util.HammerUsageEvent;
 
 public class TutorialMod implements ModInitializer {
@@ -31,6 +32,7 @@ public class TutorialMod implements ModInitializer {
 		ModBlocks.initialize();
 		ModItemGroups.initialize();
 		ModDataComponentTypes.initialize();
+		ModSounds.initialize();
 
 		FuelRegistryEvents.BUILD.register((builder, context) -> {
 			builder.add(ModItems.STAR_LIGHT_ASHES, 30 * 20);

@@ -15,6 +15,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.custom.MagicBlock;
 import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
+import xlorenz.tutorialmod.sound.ModSounds;
 
 import java.util.function.Function;
 
@@ -50,9 +51,9 @@ public class ModBlocks {
     public  static  final Block MAGIC_BLOCK = register("magic_block", MagicBlock::new, AbstractBlock.Settings.create()
             .strength(1f)
             .requiresTool()
+            .sounds(ModSounds.MAGIC_BLOCK_SOUNDS)
     );
 
-    String name = "pink_garnet_stairs";
     public static final Block PINK_GARNET_STAIRS = register("pink_garnet_stairs", new StairsBlock(ModBlocks.PINK_GARNET_BLOCK.getDefaultState(), AbstractBlock.Settings.create()
             .strength(2f)
             .requiresTool()
