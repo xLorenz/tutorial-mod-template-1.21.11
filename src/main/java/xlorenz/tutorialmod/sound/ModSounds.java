@@ -1,7 +1,10 @@
 package xlorenz.tutorialmod.sound;
 
+import net.minecraft.block.jukebox.JukeboxSong;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -17,8 +20,14 @@ public class ModSounds {
     public static final SoundEvent MAGIC_BLOCK_HIT = register("magic_block_hit");
     public static final SoundEvent MAGIC_BLOCK_FALL = register("magic_block_fall");
 
+    public static final SoundEvent BAR_BRAWL = register("bar_brawl");
+    public static final RegistryKey<JukeboxSong> BAR_BRAWL_KEY = RegistryKey.of(RegistryKeys.JUKEBOX_SONG,
+            Identifier.of(TutorialMod.MOD_ID, "bar_brawl"));
+
+
     public static final BlockSoundGroup MAGIC_BLOCK_SOUNDS = new BlockSoundGroup(1.0f, 1.0f,
             MAGIC_BLOCK_BREAK, MAGIC_BLOCK_STEP, MAGIC_BLOCK_PLACE, MAGIC_BLOCK_HIT, MAGIC_BLOCK_FALL);
+
 
 
 

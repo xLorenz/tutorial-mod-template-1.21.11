@@ -110,6 +110,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.upload(ModItems.KAUPEN_BOW, Models.HANDHELD);
         itemModelGenerator.registerBow(ModItems.KAUPEN_BOW);
 
+        itemModelGenerator.register(ModItems.BAR_BRAWL_MUSIC_DISC, Models.GENERATED);
     }
 
     private void registerBlockAndItem(BlockStateModelGenerator gen, Block block) {

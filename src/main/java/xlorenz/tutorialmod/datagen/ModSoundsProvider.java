@@ -7,6 +7,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
+import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.sound.ModSounds;
 
 import java.util.concurrent.CompletableFuture;
@@ -25,6 +27,8 @@ public class ModSoundsProvider extends FabricSoundsProvider {
         add(exporter, ModSounds.MAGIC_BLOCK_HIT);
         add(exporter, ModSounds.MAGIC_BLOCK_PLACE);
         add(exporter, ModSounds.MAGIC_BLOCK_STEP);
+
+        exporter.add(ModSounds.BAR_BRAWL, SoundTypeBuilder.of().sound(SoundTypeBuilder.EntryBuilder.ofFile(Registries.SOUND_EVENT.getId(ModSounds.BAR_BRAWL)).stream(true)));
     }
 
     public void add(SoundExporter exporter, SoundEvent sound) {

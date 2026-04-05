@@ -18,6 +18,7 @@ import xlorenz.tutorialmod.items.custom.BoostStaffItem;
 import xlorenz.tutorialmod.items.custom.ChiselItem;
 import xlorenz.tutorialmod.items.custom.HammerItem;
 import xlorenz.tutorialmod.items.custom.ModArmorItem;
+import xlorenz.tutorialmod.sound.ModSounds;
 import xlorenz.tutorialmod.trim.ModTrimMaterials;
 
 import java.util.function.Function;
@@ -78,6 +79,7 @@ public  class ModItems {
 
     public static final Item KAUPEN_BOW = register("kaupen_bow", BowItem::new, new Item.Settings().maxDamage(200));
 
+    public static final Item BAR_BRAWL_MUSIC_DISC = register("bar_brawl_music_disc", Item::new, new Item.Settings().maxCount(1).jukeboxPlayable(ModSounds.BAR_BRAWL_KEY));
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         Item item = itemFactory.apply(settings.registryKey(getKey(name)));

@@ -61,6 +61,7 @@ public class ModItemGroups {
         entries.add(ModItems.KAUPEN_ARMOR_TRIM_SMITHING_TEMPLATE);
 
         entries.add(ModItems.KAUPEN_BOW);
+        entries.add(ModItems.BAR_BRAWL_MUSIC_DISC);
     })));
 
 
