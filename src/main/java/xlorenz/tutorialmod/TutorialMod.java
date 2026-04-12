@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.components.ModDataComponentTypes;
+import xlorenz.tutorialmod.effect.ModEffects;
 import xlorenz.tutorialmod.items.ModItemGroups;
 import xlorenz.tutorialmod.items.ModItems;
 import xlorenz.tutorialmod.sound.ModSounds;
@@ -33,6 +34,7 @@ public class TutorialMod implements ModInitializer {
 		ModItemGroups.initialize();
 		ModDataComponentTypes.initialize();
 		ModSounds.initialize();
+		ModEffects.initialize();
 
 		FuelRegistryEvents.BUILD.register((builder, context) -> {
 			builder.add(ModItems.STAR_LIGHT_ASHES, 30 * 20);
