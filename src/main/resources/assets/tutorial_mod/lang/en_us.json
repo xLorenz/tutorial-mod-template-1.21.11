@@ -59,7 +59,10 @@
   "trim_material.tutorial_mod.pink_garnet": "Pink Garnet Material",
   "trim_pattern.tutorial_mod.kaupen": "Kaupen Armor Pattern",
 
-  "effect.tutorial_mod.slimy": "Slimy"
+  "effect.tutorial_mod.slimy": "Slimy",
 
+  "item.minecraft.potion.effect.slimy": "Slimy Potion",
+  "item.minecraft.splash_potion.effect.slimy": "Slimy Splash Potion",
+  "item.minecraft.lingering_potion.effect.slimy": "Slimy Lingering Potion"
 
 }
