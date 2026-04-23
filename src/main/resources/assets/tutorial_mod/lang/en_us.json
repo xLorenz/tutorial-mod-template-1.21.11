@@ -63,6 +63,13 @@
 
   "item.minecraft.potion.effect.slimy": "Slimy Potion",
   "item.minecraft.splash_potion.effect.slimy": "Slimy Splash Potion",
-  "item.minecraft.lingering_potion.effect.slimy": "Slimy Lingering Potion"
+  "item.minecraft.lingering_potion.effect.slimy": "Slimy Lingering Potion",
+
+  "painting.tutorial_mod.saw_them.title": "Saw Them",
+  "painting.tutorial_mod.saw_them.author": "NanoAttack",
+  "painting.tutorial_mod.shrimp.title": "Shrimp",
+  "painting.tutorial_mod.shrimp.author": "NanoAttack",
+  "painting.tutorial_mod.world.title": "World",
+  "painting.tutorial_mod.world.author": "NanoAttack"
 
 }
