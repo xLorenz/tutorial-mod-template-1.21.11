@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 import xlorenz.tutorialmod.datagen.*;
+import xlorenz.tutorialmod.enchantment.ModEnchantments;
 import xlorenz.tutorialmod.trim.ModTrimMaterials;
 import xlorenz.tutorialmod.trim.ModTrimPatterns;
 
@@ -26,5 +27,6 @@ public class TutorialModDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.TRIM_PATTERN, ModTrimPatterns::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
 	}
 }
