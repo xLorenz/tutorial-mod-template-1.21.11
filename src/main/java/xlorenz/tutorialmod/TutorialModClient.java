@@ -18,6 +18,7 @@ public class TutorialModClient implements ClientModInitializer {
 
         BlockRenderLayerMapImpl.putBlock(ModBlocks.PINK_GARNET_DOOR, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMapImpl.putBlock(ModBlocks.PINK_GARNET_TRAPDOOR, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMapImpl.putBlock(ModBlocks.CAULIFLOWER_CROP, BlockRenderLayer.CUTOUT);
 
 
         ItemTooltipCallback.EVENT.register((stack, context, type, lines) -> {

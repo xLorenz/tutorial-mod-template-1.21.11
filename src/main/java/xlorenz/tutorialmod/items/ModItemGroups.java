@@ -18,6 +18,7 @@ public class ModItemGroups {
         entries.add(ModItems.PINK_GARNET);
         entries.add(ModItems.ADAMANTITE_INGOT);
         entries.add(ModItems.CAULIFLOWER);
+        entries.add(ModItems.CAULIFLOWER_SEEDS);
         entries.add(ModItems.STAR_LIGHT_ASHES);
     }));
 

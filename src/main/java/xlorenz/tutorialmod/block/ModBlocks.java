@@ -2,6 +2,7 @@ package xlorenz.tutorialmod.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -13,6 +14,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import xlorenz.tutorialmod.TutorialMod;
+import xlorenz.tutorialmod.block.custom.CauliflowerCropBlock;
 import xlorenz.tutorialmod.block.custom.MagicBlock;
 import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
 import xlorenz.tutorialmod.sound.ModSounds;
@@ -111,6 +113,8 @@ public class ModBlocks {
             .registryKey(getRegistryKey("pink_garnet_lamp"))
     ));
 
+    public static final Block CAULIFLOWER_CROP = registerWithoutItem("cauliflower_crop", CauliflowerCropBlock::new, AbstractBlock.Settings.create()
+            .noCollision().breakInstantly().sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY).mapColor(MapColor.DARK_GREEN));
 
 
     private static Block registerBlock(String name, AbstractBlock.Settings settings) {
@@ -137,6 +141,15 @@ public class ModBlocks {
         return  RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
     }
 
+    public static Block registerWithoutItem(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings) {
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
+
+        Block block = blockFactory.apply(settings.registryKey(blockKey));
+
+        Registry.register(Registries.BLOCK, blockKey, block);
+
+        return  block;
+    }
     public static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings) {
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
 

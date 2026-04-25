@@ -14,6 +14,7 @@ import net.minecraft.server.dedicated.management.RpcDiscover;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import xlorenz.tutorialmod.TutorialMod;
+import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.items.custom.BoostStaffItem;
 import xlorenz.tutorialmod.items.custom.ChiselItem;
 import xlorenz.tutorialmod.items.custom.HammerItem;
@@ -81,12 +82,14 @@ public  class ModItems {
 
     public static final Item BAR_BRAWL_MUSIC_DISC = register("bar_brawl_music_disc", Item::new, new Item.Settings().maxCount(1).jukeboxPlayable(ModSounds.BAR_BRAWL_KEY));
 
+    public static final Item CAULIFLOWER_SEEDS = register("cauliflower_seeds", new BlockItem(ModBlocks.CAULIFLOWER_CROP, new Item.Settings()
+            .registryKey(getKey("cauliflower_seeds")).useItemPrefixedTranslationKey()));
+
+
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         Item item = itemFactory.apply(settings.registryKey(getKey(name)));
 
-        Registry.register(Registries.ITEM, getKey(name), item);
-
-        return  item;
+        return register(name, item);
     }
 
     public static RegistryKey<Item> getKey(String name) {

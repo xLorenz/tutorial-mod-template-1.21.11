@@ -72,6 +72,9 @@
   "painting.tutorial_mod.world.title": "World",
   "painting.tutorial_mod.world.author": "NanoAttack",
 
-  "enchantment.tutorial_mod.lightning_striker": "Lightning Striker"
+  "enchantment.tutorial_mod.lightning_striker": "Lightning Striker",
+
+  "block.tutorial_mod.cauliflower_crop": "Cauliflower Crop",
+  "item.tutorial_mod.cauliflower_seeds": "Cauliflower Seeds"
 
 }

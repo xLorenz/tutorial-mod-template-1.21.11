@@ -24,6 +24,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.ModBlocks;
+import xlorenz.tutorialmod.block.custom.CauliflowerCropBlock;
 import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
 import xlorenz.tutorialmod.components.ModDataComponentTypes;
 import xlorenz.tutorialmod.items.ModArmorMaterials;
@@ -70,7 +71,10 @@ public class ModModelProvider extends FabricModelProvider {
         WeightedVariant weightedVariant = createWeightedVariant(TexturedModel.CUBE_ALL.upload(ModBlocks.PINK_GARNET_LAMP, blockStateModelGenerator.modelCollector));
         WeightedVariant weightedVariant2 = createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PINK_GARNET_LAMP, "_on", Models.CUBE_ALL, TextureMap::all));
         blockStateModelGenerator.blockStateCollector
-                .accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PINK_GARNET_LAMP).with(createBooleanModelMap(PinkGarnetLampBlock.CLICKED, weightedVariant2, weightedVariant)));    }
+                .accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PINK_GARNET_LAMP).with(createBooleanModelMap(PinkGarnetLampBlock.CLICKED, weightedVariant2, weightedVariant)));
+
+        blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0,1,2,3,4,5,6);
+    }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
