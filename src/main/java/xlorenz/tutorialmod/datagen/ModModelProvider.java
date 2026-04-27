@@ -25,6 +25,7 @@ import net.minecraft.util.Identifier;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.ModBlocks;
 import xlorenz.tutorialmod.block.custom.CauliflowerCropBlock;
+import xlorenz.tutorialmod.block.custom.HoneyBerryBushBlock;
 import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
 import xlorenz.tutorialmod.components.ModDataComponentTypes;
 import xlorenz.tutorialmod.items.ModArmorMaterials;
@@ -74,6 +75,8 @@ public class ModModelProvider extends FabricModelProvider {
                 .accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PINK_GARNET_LAMP).with(createBooleanModelMap(PinkGarnetLampBlock.CLICKED, weightedVariant2, weightedVariant)));
 
         blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0,1,2,3,4,5,6);
+
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.HONEY_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED, HoneyBerryBushBlock.AGE, 0,1,2,3);
     }
 
     @Override

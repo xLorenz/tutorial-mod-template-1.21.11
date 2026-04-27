@@ -85,6 +85,8 @@ public  class ModItems {
     public static final Item CAULIFLOWER_SEEDS = register("cauliflower_seeds", new BlockItem(ModBlocks.CAULIFLOWER_CROP, new Item.Settings()
             .registryKey(getKey("cauliflower_seeds")).useItemPrefixedTranslationKey()));
 
+    public static final Item HONEY_BERRIES = register("honey_berries", new BlockItem(ModBlocks.HONEY_BERRY_BUSH, new Item.Settings()
+            .registryKey(getKey("honey_berries")).useItemPrefixedTranslationKey().food(ModFoodComponents.HONEY_BERRIES)));
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         Item item = itemFactory.apply(settings.registryKey(getKey(name)));

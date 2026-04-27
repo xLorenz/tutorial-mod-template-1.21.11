@@ -20,6 +20,7 @@ public class ModItemGroups {
         entries.add(ModItems.CAULIFLOWER);
         entries.add(ModItems.CAULIFLOWER_SEEDS);
         entries.add(ModItems.STAR_LIGHT_ASHES);
+        entries.add(ModItems.HONEY_BERRIES);
     }));
 
     public static  final  ItemGroup GARNET_BLOCK_TAB = register("garnet_blocks_group", ModBlocks.PINK_GARNET_BLOCK, ((displayContext, entries) -> {

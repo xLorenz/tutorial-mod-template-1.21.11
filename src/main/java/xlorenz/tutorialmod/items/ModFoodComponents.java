@@ -15,6 +15,11 @@ public class ModFoodComponents {
             .saturationModifier(0.25f)
             .build();
 
+    public static final FoodComponent HONEY_BERRIES = new FoodComponent.Builder()
+            .nutrition(2)
+            .saturationModifier(0.15f)
+            .build();
+
     public static final ConsumableComponent CAULIFLOWER_EFFECTS = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(List.of(
                     new StatusEffectInstance(StatusEffects.DARKNESS, 20, 1),
@@ -24,6 +29,4 @@ public class ModFoodComponents {
                 )
             )
             .build();
-
-
 }

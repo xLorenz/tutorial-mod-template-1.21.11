@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "tutorial_mod:block/honey_berry_bush_stage2"
+  }
+}

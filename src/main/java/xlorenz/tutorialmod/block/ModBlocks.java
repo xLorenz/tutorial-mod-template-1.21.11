@@ -15,6 +15,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import xlorenz.tutorialmod.TutorialMod;
 import xlorenz.tutorialmod.block.custom.CauliflowerCropBlock;
+import xlorenz.tutorialmod.block.custom.HoneyBerryBushBlock;
 import xlorenz.tutorialmod.block.custom.MagicBlock;
 import xlorenz.tutorialmod.block.custom.PinkGarnetLampBlock;
 import xlorenz.tutorialmod.sound.ModSounds;
@@ -116,6 +117,7 @@ public class ModBlocks {
     public static final Block CAULIFLOWER_CROP = registerWithoutItem("cauliflower_crop", CauliflowerCropBlock::new, AbstractBlock.Settings.create()
             .noCollision().breakInstantly().sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY).mapColor(MapColor.DARK_GREEN));
 
+    public static final Block HONEY_BERRY_BUSH = registerWithoutItem("honey_berry_bush", HoneyBerryBushBlock::new, AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH));
 
     private static Block registerBlock(String name, AbstractBlock.Settings settings) {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TutorialMod.MOD_ID, name));
